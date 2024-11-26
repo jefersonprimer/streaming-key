@@ -1,0 +1,11 @@
+services:
+nginx:
+image: tiangolo/nginx-rtmp:latest
+volumes:
+- ./nginx.config:/etc/nginx/nginx.config
+- streams-volumes:/hls/live
+ports:
+- "1935:1935"
+
+volumes:
+streams-volumes:
